@@ -17,7 +17,7 @@ function download(callback) {
         callback()
       })
       .on('error', callback)
-  })
+  }).on('error', callback)
 }
 
 function unzip(callback) {
