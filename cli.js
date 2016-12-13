@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var net = require('net');
-var ip = require('ipip')();
+var ip = require('.')();
 
 var log = function(result) {
   for (var key in result)
