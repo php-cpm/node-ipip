@@ -1,5 +1,6 @@
 import path from 'path'
 import net from 'net'
+import fs from 'fs'
 import Reader from './reader'
 const DEFAULT_DATA_PATH = path.join(__dirname, '..', '17monipdb.dat');
 
@@ -22,6 +23,9 @@ class IPIP {
     } else {
       this._database = opt.data;
     }
+    if(!fs.existsSync(this._database)) {
+      throw new Error('Invalid database path');
+    }
     
     this._version = opt.version || this._database.split('.').pop();
     if (!this._version.match(/^datx?$/i)) {
@@ -39,7 +43,6 @@ class IPIP {
    * @return {Object|Array}    query result
    */
   ip(ip, format) {
-    console.log( this )
     var ipInt = 0;
     if (net.isIPv4(ip)) {
       ipInt = ip;

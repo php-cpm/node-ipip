@@ -8,30 +8,26 @@ describe('IPIP', function() {
 
   it('should handle malformed input', function(done) {
     expect(function() {
-      ip('202.x.x.x');
+      ip.ip('202.x.x.x');
     }).to.throw(Error);
 
     expect(function() {
-      ip('256.1.1.1');
+      ip.ip('256.1.1.1');
     }).to.throw(Error);
 
     expect(function() {
-      ip('8.8.4.4', 'invalid-format');
+      ip.ip('8.8.4.4', 'invalid-format');
     }).to.throw(Error);
 
     done();
   });
 
-  it('should accept numeric input', function() {
-    expect(ip(0x040404)).to.have.a.property('city');
-  });
-
   it('should return a dictionary', function() {
-    expect(ip('202.195.161.30', 'dict')).to.have.a.property('city');
+    expect(ip.ip('202.195.161.30', 'dict')).to.have.a.property('city');
   });
 
   it('should return an array', function() {
-    expect(ip('8.8.8.8', 'array')).to.be.an.aray;
+    expect(ip.ip('8.8.8.8', 'array')).to.be.an.aray;
   });
 
 });
@@ -48,7 +44,7 @@ describe('Custom options', function() {
 
     var path = require('path').join(__dirname, '..', '17monipdb.dat');
     var ip = ipip(path);
-    expect(ip('8.8.8.8', 'dict')).to.have.a.property('city');
+    expect(ip.ip('8.8.8.8', 'dict')).to.have.a.property('city');
 
     done();
   });
