@@ -1,0 +1,52 @@
+{
+  "name": "ipip",
+  "version": "2.2.0",
+  "main": "lib/ipip.js",
+  "description": "Query geolocation information from IP",
+  "homepage": "http://tool.17mon.cn",
+  "bugs": "https://github.com/php-cpm/node-ipip/issues",
+  "author": {
+    "name": "zouyi",
+    "email": "zouyi6@wanda.cn",
+    "url": "https://github.com/php-cpm"
+  },
+  "bin": {
+    "ipip": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/php-cpm/node-ipip.git"
+  },
+  "license": "MIT",
+  "files": [
+    "lib",
+    "cli.js"
+  ],
+  "scripts": {
+    "babel": "babel src --out-dir lib",
+    "test": "make test-all"
+  },
+  "keywords": [
+    "ip",
+    "isp",
+    "geolocation",
+    "lookup"
+  ],
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
+    "eslint": "^3.14.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "17mon": "^1.0.0"
+  }
+}
