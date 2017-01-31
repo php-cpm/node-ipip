@@ -1,5 +1,5 @@
 {
-  "name": "ipip",
+  "name": "ipip-ex",
   "version": "3.0.0",
   "main": "lib/ipip.js",
   "description": "Query geolocation information from IP",
