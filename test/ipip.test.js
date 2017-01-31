@@ -1,8 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect,
-  ipip = require('../lib/ipip.js'),
-  IPIP = ipip.IPIP;
+  ipip = require('../lib/ipip.js');
 
 describe('IPIP', function() {
   var ip = ipip();

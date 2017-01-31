@@ -7,31 +7,33 @@
 ## 入门
 
 安装依赖项
-
-    npm install ipip
-
-[IP 地址库](http://s.qdcdn.com/17mon/17monipdb.dat) 由 ipip.net（原 17mon） 提供。在支持 wget 和 unzip 的系统上，将会在安装模块时自动下载解压。*Windows 用户需要手动安装数据库*。
+```
+    npm install ipip-ex
+```
+ - [IP 地址库](http://s.qdcdn.com/17mon/17monipdb.dat) 由 ipip.net（原 17mon） 提供。
+ - 每日自动构建，提供开发版本。
+ - 与[ChiChou/node-ipip](https://github.com/ChiChou/node-ipip)不完全兼容
 
 代码示例
-
-    var ipInfo = require('ipip')();
+```
+    var ipip = require('ipip-ex')();
     
     // 查询 IP 信息，以字典格式返回
-    console.log(ipInfo('202.195.161.30'));
-
+    console.log(ipip.ip('202.195.161.30'));
+```
 ## 文档
 
 ### 加载数据库
-
-require('ipip')([database])
-
+```
+require('ipip-ex')([database])
+```
 加载 database 指向的数据库，支持 dat 和 datx 格式。默认为免费版的 17monipdb.dat。
 
 例：
-
-    require('ipip')('/path/to/your/database.datx')
-    require('ipip')({data: '/path/to/file', version: 'datx'})
-
+```
+    require('ipip-ex')('/path/to/your/database.datx')
+    require('ipip-ex')({data: '/path/to/file', version: 'datx'})
+```
 **注意**：加载数据库是一个阻塞调用。
 
 ### 查 IP
@@ -43,10 +45,10 @@ ip(ip [, format])
 待查询的 IP 地址，如 `8.8.8.8`
 
 例：
-
-    var ip = require('ipip')();
-    console.log(ip('8.8.8.8'));
-
+```
+    var ip = require('ipip-ex')();
+    console.log(ip.ip('8.8.8.8'));
+```
 **format** 
 
 制定返回数据的格式，可设置为 `array` 或者 `dict`。 
@@ -56,24 +58,24 @@ ip(ip [, format])
 
 例：
 
-    console.log(ip('8.8.8.8', ip.FORMAT_DICT));
+    console.log(ip.ip('8.8.8.8', ip.FORMAT_DICT));
 
 设为 `array`（缺省）时返回格式如下：
     
     ['国家', '省份', '城市']
 
 设为 `dict` 时返回格式如下：
-
+```
     {
       country: '国家',
       province: '省份',
       city: '城市'
     }
-
+```
 ## 命令行小工具
 
 安装位全局模块之后，可以在命令行中使用 `ipip` 快速查询 IP 信息：
-
+```
     ➜  ~ ipip 8.8.8.8 202.195.161.30
     Information for 8.8.8.8:
     country: GOOGLE
@@ -84,8 +86,7 @@ ip(ip [, format])
     country: 中国
     province: 江苏
     city: 镇江
-    
-
+```
 ## 授权
 
 MIT

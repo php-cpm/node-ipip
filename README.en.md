@@ -2,6 +2,8 @@
 
 [中文文档](README.md)
 
+** English Version README is out of date **
+
 A Node.js module to query geolocation information for an IP or domain, based on database by [ipip.net](http://ipip.net).
 
 ## Getting Started

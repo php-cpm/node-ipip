@@ -17,7 +17,7 @@ if (process.argv.length < 3) {
 process.argv.slice(2).forEach(function(e) {
   if (net.isIPv4(e)) {
     console.log('Information for ' + e + ':');
-    log(ip(e));
+    log(ip.ip(e));
     console.log('');
   } else {
     console.error('Invalid ip: ' + e);
